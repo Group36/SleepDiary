@@ -1,2 +1,2 @@
-It's going to be an SQL server done in Visual Studio 2012 most in C# (fun).
-Not going well for the time being.
+It's going to be an web server done in J2EE
+We still need to get the server and set it all up, and tech office seems closed for the time being...
