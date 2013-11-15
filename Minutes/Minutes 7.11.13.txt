@@ -1,0 +1,12 @@
+Minutes 7/11/13
+Main points covered:
+* Data transfer from app to website will be done via a submit button on the app, which will allow the user to send to data to the database whenever he has good phone coverage.
+* Output from questions will be in .txt file for graphs and website.
+* Requirements documentation will be done after the meeting with Metka, Java prototyping in the meantime.
+* Programs and minutes will be uploaded to Github.
+* Sleep tone generator will be left after meeting Metka, to fully understand what she would like to be included.
+* Aims for next meeting:
+o Attempt to find ways to graph data
+o Find out how to set up server
+o Debug question code and refine it
+

@@ -1,0 +1,11 @@
+Minutes 12/11/2013
+* Sounds for App will be 30mns each (waves, walking on sand, windchimes)
+* App will send 4 pictures to server with tips
+* Pictures on phone will have to be high resolution so it is clear when sent to website
+* Aims for next meeting:
+o Finish question programming
+o Graph programming
+o Get server and program server
+
+
+

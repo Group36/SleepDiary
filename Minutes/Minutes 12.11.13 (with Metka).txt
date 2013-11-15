@@ -1,0 +1,40 @@
+Minutes 12/11/2013 
+Client present
+Main points covered:
+* The questions asked in the diary will mostly be hygiene questions with 3-4 sleep quality questions.
+* Questionnaire should be completed in under 5 minutes.
+* Sleep diary should have 10-12 questions
+* Reward screen will include funny picture and tips for improvement and a score
+* Question should have big buttons
+* App should be used on smartphones in particular Android
+* Age range is 18-65 but mostly 20+
+* App should be cheerful and motivational
+* App will be tested on non-clinical patients, with one clinician overseeing it all.
+* App has to go through Ethics Committee, and be deemed fit for use.
+* If successful app will be used by 100 clinicians with about 20 patients each.
+* Access will be given individually to each clinician but with access to all data.
+* App should not go on the store (lead to non-patients be able to submit data), but has to go through UCL app library. Clinicians may give the app out.
+*  Login into App would be done with the doctor.
+* Tips should be returned after the completed their first two weeks of the Diary, they should mainly be given back to people who have done poorly.
+* Generic tips need to be included.
+* Pages shouldn’t be too busy.
+* Tone generation should be self-recorded nature sounds (waves, walking on sand…)
+* Maximum of 3 tones
+* Graphs should only be at the end of the 2 weeks, then every 4 weeks
+*  Patients get info on how well they did with the graphs and with feedback
+* 4 graphs should be returned after the 2 weeks, on freshness of sleep, quality of sleep, number of times patient woke up, and how long it took them to fall asleep
+* Main goal is motivation! Rewards encourage them to do it more often
+* Data stored on phone
+* An approximated 42 images will be used
+* Server will start as UCL server for trial period, however for ethical reasons server may or may not be changed but we would have no access to it
+* Come up with App name & Widget
+* Menu should have few options, keep screen spacious
+* Graphs submitted to doctor every two weeks, but with submit button on menu
+* Each clinician should have single password for website
+* Home page should have patient number(make up for trial) and name
+* Order patients by name, alphabetically
+* Each patient would have the 4 graphs that the patient has
+* Wristband that tracks sleep not necessary
+* Submit requirements to Metka by Wednesday
+
+ 
