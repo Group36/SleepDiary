@@ -4,8 +4,13 @@ Main points covered:
 * Discussed adaptation of java program done to java
 * Will possible use KitKat rather than JellyBean as it will allow the use of more libraries
 * Discussed the use of adaptors for the graphs (?)
-* Documentation break down 
+* Documentation break down
 * To be done:
 o Check KitKat API
 o Adapt done programs for it to be useable with android
+o Go over general requirments and finish their section by Wednesday latest
 o Finish documentation
+o Requirment documentation MUST be sent out to Metka by Wednesday
+o After Wednesday doing second part of GC01 doc
+o Get TA to go over questoin code to trty to include inheritance
+o Important meeting on Monday 25/11/13
