@@ -1,0 +1,11 @@
+Minutes 18/11/13
+Second meeting
+Main points covered:
+* Discussed adaptation of java program done to java
+* Will possible use KitKat rather than JellyBean as it will allow the use of more libraries
+* Discussed the use of adaptors for the graphs (?)
+* Documentation break down 
+* To be done:
+o Check KitKat API
+o Adapt done programs for it to be useable with android
+o Finish documentation

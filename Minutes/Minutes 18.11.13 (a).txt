@@ -1,0 +1,9 @@
+Minutes 18/11/13
+First Meeting
+Main points covered:
+* Decided to combine all documentation into one document that specifically covers coursework point
+* Wire framing method discussed, especially to make it more appealing for client
+* Reviewed question code structure
+* To be done:
+o Documentation structure will be written up
+o Research mp3 player code
