@@ -1,0 +1,30 @@
+Minutes – 2/12/13 1030am-1215pm
+Discussion: 
+NodOff is officially the name. Chosen by Client from a long list sent, with a cartoon of a nodding dog as the mascot, and potentially a video of a nodding dog in action used. 
+Widget- nodding dog cartoon. Maybe a brown Labrador. Can we have a video, of the dog actually nodding or does it have to be a picture? Depends on where we are using it. Generally an image, but a video on the loading screen of the dog actually nodding. Something like this:   
+We have no interfaces or abstraction which is a problem. Future coders will find it hard when we pass it over to Metka’s developers. We need to address this. Abstraction: parent class for button which extends to provide each action listener.  We want big fat buttons, rather than little radio (bullit point) buttons. Parent class of button can be ‘view’ – which will also have the subclass label. These parent classes are the next thing to be coded so that all future code can correctly call and use them. Decided to change app to include a homepage button on every screen. Need to work out how you go back to the questionnaire to add more data, what if someone calls. Replace old data or add to it? What if they just give up (likely with our users). 
+How will we split up coding? Follow fixed design pattern from the book. Using swipe.
+We don’t like that you only see the graphs the once and can’t refer back to them even though Metka requested this. We will bring it up for a second time next time we speak to her just to double check and ensure she knows that an extra button on the home screen to look back at these graphs that appears after 2 weeks is an option. And how often do we want the graphs updated? 
+Sounds need to be recorded – 5-10mins (2 is ok for walking on sand) in .mp3 format. Send them to G as he has the program required to edit them. They will be looped.
+Images – so far have all been cute + cuddly, lets not keep it on this theme and branch out, less girly, more funny ones. And totally random ones. 
+
+To Do:
+C – record walking on sand and waves as above, can’t be done until ~9 days when visit to beach is happening. 
+Testing – we can do foam/picture tests. C will look into this. And email Metka about potentially finding people with depression to test app on. 
+C – look into use of adaptor for graphing? 
+C - finish poster. 
+C add Jeff to Blog
+C write up minutes
+C email metka to double check we can’t have a ‘graph’ button on the homepage. And to ask how often she would want this updated.
+G and C both look for 10 more images each.
+G - put new persona up by Friday – J will write about how our app meets our users (both personas) needs by the following Wednesday. If this can be first priority that would help so that J can get on with his bit. 
+G will make parent classes asap – ‘view’, ‘button’ – to be looked over by J on Friday.
+G – record windchimes for ~5 mins in ,mp3 format and send to J. 
+J is going to make the blog now that we have a name decided on, asap – and send us both an email with a link to it and detail of how to log on.
+J put poster image on blog as the HCI flow diagram requirement. 
+J - once C has added Jeff to the blog and G has added a second persona, write on the blog about how our app meets our users needs with direct reference to both personas. 
+J will check all writing on his poster diagram is big enough to be read, otherwise he’ll make it bigger and resend to C for poster compilation. 
+J - look into widget and moving cartoon further. Can we find an un-copyrighted version we like or can we make one easily. Show/tell us what he found out this time next week.
+
+(N.B. George is away: 4-11th, James away: 18-6th) 
+
