@@ -1,0 +1,17 @@
+4th December
+C - email metka how many images needed - it's the main selling point so we think there should be a lot to reduce repitition. double check again about graphs and when/how long displayed. 
+G+J - get 15 pictures. 'Congratulations' string will be displayed separately from the image so don't include this on the images. 
+We all agreed we are happy with James' logo as it is. Which means the poster is now complete and C can send it off (add 'Our Logo:' text box and put a black box around the dog).
+G plays us the tones he's made - we went against manually recording them as G realised he has Logix on an old mac so he could create them easily. They went down swimmingly. We need to get Metka to sign off on these noises. G will send us both the tones for C to pass on and check with Metka and for J to start playing with on his MP3 program. 
+G persona is now on the blog, J can now do 'how our app meets Jeff's and Mandy's specific needs'. 
+G - for HCI blog - which parts of design are available for different screen rotation, sizes and resolutions. 
+G shows us his code plan before he begins writing it our for real. G start hardcoding - done/ how far done to be shown on Sunday. We agree not to use swipe between questions as users may not know that is an option and become frustrated trying to navigate. Buttons instead. Data reader (from G and also used by C) will use arraylists.
+C code must include timers for checking 2-6-10 weeks to make the graphs. Graph code try and be done by Sunday. G will send his code to C periodically until then so she can ensure their parts will fit together. 
+C will stay on top of HCI requirements ensuring everything is delegated correctly. 
+J will take most reponsibility for the Windows platform.
+G takes main responsibility for Android.
+C do bullit point 6 of HCI reuirements by Sunday. 
+Not having a server is really becoming a bottleneck so J is gna bug him again. 
+
+  
+
