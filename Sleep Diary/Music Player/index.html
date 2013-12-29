@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>Media Player</title>
+		<link rel="stylesheet" href="styles/main.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta charset="utf-8">
+
+		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+		<script type="text/javascript" src="scripts/main.js"></script>
+	</head>
+	<body>
+		<header class="header">
+			<h1>Music Player</h1>
+		</header>
+		<div class="content">
+            <div class="action-area ch50">
+
+                
+                    <select>
+                        <option id="blank">Choose loop time</option>
+                        <option id="15" >15 minutes</option>
+                        <option id="30">30 minutes</option>
+                        <option id="45">45 minutes</option>
+                        <option id="60">1h</option>
+                        <option id="90">1h30</option>
+                        <option id="120">2h</option>
+                    </select>
+                
+
+                <button class="button dh" id="buttonPlayAudio">Play</button>
+			    <button class="button dh" id="buttonPauseAudio">Pause</button>
+			    <button class="button dh" id="buttonStopAudio">Stop</button>
+                
+
+            </div>
+			<div class="result-area ch50">
+                <div class="results">
+                    <div id="result" class="desc"></div>
+                </div>
+            </div>
+		</div>
+
+        <p id="audio_position"></p>
+
+
+	</body>
+</html>
