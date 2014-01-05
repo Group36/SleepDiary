@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<link href="StyleSheet.css" type="text/css"rel="stylesheet"/>
+		<script type="text/javascript" src="linker.js"></script>
+		<script type="text/javascript">
+			window.onload = function(){
+			
+	    	reSetter();
+	 };
+	    
+	    function reSetter(){
+	    var ex2 = document.getElementById('ans5');
+	    var ex3 = document.getElementById('ans6');
+	    var ex4 = document.getElementById('ans7');
+	    var ex5 = document.getElementById('ans8');
+	    var ex6 = document.getElementById('ans9');
+		var answer1=localStorage.getItem('answer9')+'1';
+		
+		switch(answer1){
+			case "101": ex2.checked=true;break;
+			case "201": ex3.checked=true;break;
+			case "301": ex4.checked=true;break;
+			case "401": ex5.checked=true;break;
+			case "501": ex6.checked=true;break;
+		}
+		}
+		
+	function handler2(rBName, scoreAddress, score, answerKey, answer) {
+	/*This is the same as the handler function in the file 'linker.js;' in that it
+	ensures only one radiobutton is checked at a time.  It also records the score and 
+	the answer, which will be explained in greater depth on the QuestionFinal.html and ImagePage.html
+	pages.*/  
+
+	    var ex2 = document.getElementById('ans5');
+	    var ex3 = document.getElementById('ans6');
+	    var ex4 = document.getElementById('ans7');
+	    var ex5 = document.getElementById('ans8');
+	    var ex6 = document.getElementById('ans9');
+	    
+	ex2.checked=false;
+	ex3.checked=false;
+	ex4.checked=false;
+	ex5.checked=false;
+	ex6.checked=false;
+	
+	var exOn = document.getElementById(rBName);
+	exOn.checked=true;
+	localStorage.setItem( scoreAddress, score);
+	var dayAddress=localStorage.getItem('todaysCount');
+	localStorage.setItem(dayAddress+answerKey,answer);
+}
+
+	 </script>	
+	</head>
+	<body>
+<h1>How much sleep did you get last night?</h1>
+
+  <input type="radio"padding-bottom:1px;padding-top:1px; name="ans5" id="ans5" value="ans5"
+ onclick ="handler2('ans5','answer9','10','-9','5')" />
+  
+  <label for="ans5">5 hours or less</label>
+
+ <li align="center">
+<input type="radio" id="ans6" value="ans6"onclick ="handler2('ans6','answer9','20','-9','6')"/>
+  <label for="ans6">6 hours</label>
+</li>
+<li align="center">  
+  <input type="radio" id="ans7" value="ans7"onclick ="handler2('ans7','answer9','30','-9','7')" />
+  <label for="ans7">7 hours</label>
+ </li>
+ <li align="center">
+<input type="radio" id="ans8" value="Yes"onclick ="handler2('ans8','answer9','40','-9','8')"/>
+  <label for="ans8">8 hours</label>
+</li>
+<li align="center">  
+  <input type="radio" id="ans9" value="ans9"onclick ="handler2('ans9','answer9','50','-9','9')" />
+  <label for="ans9">9 hours or more</label>
+ </li>
+ <div id="warning2"></div>
+<img src="PieImages/pie9new.png" name="MyImage"id="pie"/>
+<button id="next"onclick="linker('answer9','Question10.html','10')">next</button>
+<button id="menu"onclick="linkBack('Menu.html','9')">menu</button>
+<button id="back"onclick="linkBack('Question8.html','8')">back</button>
+	</body>
+</html>

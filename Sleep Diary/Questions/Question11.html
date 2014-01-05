@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<link href="StyleSheet.css" type="text/css"rel="stylesheet"/>
+		<script type="text/javascript" src="linker.js"></script>
+		<script type="text/javascript">
+			window.onload = function(){
+			
+	    	reSetter();
+	 };
+	    
+	     function reSetter(){
+		var ex1 = document.getElementById('ans4');
+	    var ex2 = document.getElementById('ans5');
+	    var ex3 = document.getElementById('ans6');
+	    var ex4 = document.getElementById('ans7');
+	    var ex5 = document.getElementById('ans8');
+		var answer1=localStorage.getItem('answer11')+'1';
+		switch(answer1){
+			case "01": ex1.checked=true;break;
+			case "101": ex2.checked=true;break;
+			case "201": ex3.checked=true;break;
+			case "301": ex4.checked=true;break;
+			case "401": ex5.checked=true;break;
+		}
+		}
+		
+		function handler2(rBName, scoreAddress, score, answerKey, answer) {
+	var ex1 = document.getElementById('ans4');
+	    var ex2 = document.getElementById('ans5');
+	    var ex3 = document.getElementById('ans6');
+	    var ex4 = document.getElementById('ans7');
+	    var ex5 = document.getElementById('ans8');
+	    
+	ex1.checked=false;
+	ex2.checked=false;
+	ex3.checked=false;
+	ex4.checked=false;
+	ex5.checked=false;
+	
+	var exOn = document.getElementById(rBName);
+	exOn.checked=true;
+	localStorage.setItem( scoreAddress, score);
+	var dayAddress=localStorage.getItem('todaysCount');
+	localStorage.setItem(dayAddress+answerKey,answer);
+}
+
+
+	 </script>	
+	</head>
+	<body>
+<h1>How many times did you wake up in the night?</h1>
+<li align="center">
+<input type="radio" id="ans4" value="ans4"onclick ="handler2('ans4','answer11','0','-11','0')"/>
+  <label for="ans4">Not at all</label>
+</li>
+<li align="center">  
+  <input type="radio"id="ans5" value="ans5"onclick ="handler2('ans5','answer11','10','-11','1')" />
+  <label for="ans5">Once</label>
+ </li>
+ <li align="center">
+<input type="radio" id="ans6" value="ans6" onclick ="handler2('ans6','answer11','20','-11','2')"/>
+  <label for="ans6">Twice</label>
+</li>
+<li align="center">  
+  <input type="radio" id="ans7" value="ans7" onclick ="handler2('ans7','answer11','30','-11','3')" />
+ <label for="ans7">Three times</label>
+ </li>
+ <li align="center">
+<input type="radio" id="ans8" value="ans8" onclick ="handler2('ans8','answer11','40','-11','4')"/>
+  <label for="ans8">Four times or more</label>
+</li>
+ <div id="warning2"></div>
+<img src="PieImages/pie11new.png" name="MyImage"id="pie"/>
+<button id="next"onclick="linker('answer11','QuestionFinal.html','12')">next</button>
+<button id="menu"onclick="linkBack('Menu.html','11')">menu</button>
+<button id="back"onclick="linkBack('Question10.html','10')">back</button>
+	</body>
+</html>

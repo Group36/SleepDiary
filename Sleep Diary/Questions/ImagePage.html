@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<script type="text/javascript" src="linker.js"></script>
+		<script type="text/javascript">
+		window.onload=function(){
+			/*If the total score is above a certain number, in this case 200,
+			 * a positive image is picked randomly from the image library.  Otherwise, a more
+			 * encouraging image is picked.
+			 */
+			var Total=parseInt(localStorage.getItem('Total'));
+			var picKey=Math.floor(7*Math.random())+1;
+			if(Total<201){
+				finalPicKey='Images/pic'+picKey+'.png';
+				document.MyImage.src=finalPicKey;}
+			else{
+				finalPicNo=parseInt(picKey)+7;
+				finalPicKey='Images/pic'+finalPicNo+'.png';
+				document.MyImage.src=finalPicKey;
+			}
+		};
+		
+		</script>
+		<link href="StyleSheet2.css" type="text/css"rel="stylesheet"/>
+	</head>
+	<body>
+<img src="blank.png" id="MyImage"name="MyImage" 
+style="position:absolute; right: 50%;margin-right: -100px;
+ bottom: 40px; width:200px;"/>
+<button style="position: absolute;
+ right:50%;
+ bottom: 2px;
+  margin-right: -18px;
+  height: 36px;
+  width: 36px;
+  border-radius: 36px;
+  border: 1px solid #000;
+  font-size: 6pt;
+  font-family:Arial Rounded MT Bold;"
+  onclick="linkBack('Menu.html','null1')">menu</button>	
+	</body>
+</html>
+

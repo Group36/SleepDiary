@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<link href="StyleSheet.css" type="text/css"rel="stylesheet"/>
+		<script type="text/javascript" src="linker.js"></script>
+		<script type="text/javascript">
+			window.onload = function(){
+			
+	    	reSetter();
+	 };
+	    
+	    function reSetter(){
+		var ex1 = document.getElementById('Yes');
+	    var ex2 = document.getElementById('No');
+		var answer1=localStorage.getItem('answer2')+'1';
+		alert(answer1);
+		if(answer1==01){
+			ex1.checked=true;
+		}
+		else if (answer1==501){
+			ex2.checked=true;
+		}
+		}
+
+	 </script>	
+	</head>
+	<body>
+<h1>Did you drink alcohol yesterday evening?</h1>
+<li align="center">
+<input type="radio" id="Yes" value="Yes"onclick ="handler('No','answer2','0','-2','1')"/>
+  <label for="Yes">Yes</label>
+</li>
+<li align="center">  
+  <input type="radio" name="No" id="No" value="No"onclick ="handler('Yes','answer2','50','-2','0')" />
+  <label for="No">No</label>
+ </li>
+ <div id="warning2"></div>
+<img src="PieImages/pie1new.png" name="MyImage"id="pie"/>
+<button id="next" onclick="linker('answer2','QuestionThree.html','3')">next</button>
+<button id="menu"onclick="linkBack('Menu.html','2')">menu</button>
+<button id="back"onclick="linkBack('QuestionOne.html','null1')">back</button>
+	</body>
+</html>

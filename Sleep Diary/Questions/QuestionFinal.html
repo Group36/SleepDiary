@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<link href="StyleSheet.css" type="text/css"rel="stylesheet"/>
+		<script type="text/javascript" src="linker.js"></script>
+		<script type="text/javascript">
+			window.onload = function() {
+			reSetter();
+	  };
+
+	     function reSetter(){
+		var ex1 = document.getElementById('ans4');
+	    var ex2 = document.getElementById('ans5');
+	    var ex3 = document.getElementById('ans6');
+	    var ex4 = document.getElementById('ans7');
+	    var ex5 = document.getElementById('ans8');
+		var answer1=localStorage.getItem('answer12')+'1';
+		alert(answer1);
+		switch(answer1){
+			case "01": ex1.checked=true;break;
+			case "101": ex2.checked=true;break;
+			case "201": ex3.checked=true;break;
+			case "301": ex4.checked=true;break;
+			case "401": ex5.checked=true;break;
+		}
+		}
+		
+		function handler2(rBName, scoreAddress, score, answerKey, answer) {
+	var ex1 = document.getElementById('ans4');
+	    var ex2 = document.getElementById('ans5');
+	    var ex3 = document.getElementById('ans6');
+	    var ex4 = document.getElementById('ans7');
+	    var ex5 = document.getElementById('ans8');
+	    
+	ex1.checked=false;
+	ex2.checked=false;
+	ex3.checked=false;
+	ex4.checked=false;
+	ex5.checked=false;
+	
+	var exOn = document.getElementById(rBName);
+	exOn.checked=true;
+	localStorage.setItem( scoreAddress, score);
+	var dayAddress=localStorage.getItem('todaysCount');
+	localStorage.setItem(dayAddress+answerKey,answer);
+}
+	  
+	    //This function is triggered when the user clicks the 'done' button
+	    function submit(){
+	    	
+	    	
+	    	var checker=localStorage.getItem('answer12');
+	    	if(checker=='10'||checker=='20'||checker=='30'||checker=='40'||checker=='0'){
+	    	/*The DoneStamp is set to done, this will be used to adjust the menu screen
+	    	* options*/
+	    		localStorage.setItem('DoneStamp','done');
+	    		localStorage.setItem('finish','null1');
+	    		var total=0;
+	    		for(var j=1;j<9;j++){
+	    			/*All the scores are totalled*/
+	    			total+=parseInt(localStorage.getItem('answer'+j));
+	    			//localStorage.setItem('answer'+j,'null1');
+	    			
+	    		}
+	    		localStorage.setItem('Total',total);
+	    	
+	    	window.location.href='ImagePage.html';
+	    	}
+	    	/*The following if loop is triggered if no answer has been made, it produces
+	    	*a line of text that says 'Please Select an Answer!'*/
+	    	else if(localStorage.getItem('finish')!='warned'){
+	    		document.getElementById("warning2").innerHTML +='Please Select an Answer!<br>';
+	    		localStorage.setItem('finish','warned');}
+	    	}
+	 </script>	
+	</head>
+	<body>
+<h1>How would you rate last night's sleep?</h1>
+<li align="center">
+<input type="radio" id="ans4" value="ans4"onclick ="handler2('ans4','answer12','0','-9','0')"/>
+  <label for="ans4">Awful</label>
+</li>
+<li align="center">  
+  <input type="radio" id="ans5" value="ans5"onclick ="handler2('ans5','answer12','10','-9','1')" />
+  <label for="ans5">Poor</label>
+ </li>
+ <li align="center">
+<input type="radio" id="ans6" value="ans6" onclick ="handler2('ans6','answer12','20','-9','2')"/>
+  <label for="ans6">Moderate</label>
+</li>
+<li align="center">  
+  <input type="radio" id="ans7" value="ans7" onclick ="handler2('ans7','answer12','30','-9','3')" />
+ <label for="ans7">Good</label>
+ </li>
+ <li align="center">
+<input type="radio" id="ans8" value="ans8" onclick ="handler2('ans8','answer12','40','-9','4')"/>
+  <label for="ans8">Very good</label>
+</li>
+ <div id="warning2"></div>
+<button id="next"onclick="submit()">done</button>
+<button id="back"onclick="linkBack('Question11.html','11')">back</button>
+<button id="menu"onclick="linkBack('Menu.html','12')">menu</button>
+
+	</body>
+</html>

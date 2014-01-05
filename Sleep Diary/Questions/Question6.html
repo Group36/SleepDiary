@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<link href="StyleSheet.css" type="text/css"rel="stylesheet"/>
+		<script type="text/javascript" src="linker.js"></script>
+		<script type="text/javascript">
+			window.onload = function(){
+			
+	    	reSetter();
+	 };
+	    
+	    function reSetter(){
+		var ex1 = document.getElementById('Yes');
+	    var ex2 = document.getElementById('No');
+		var answer1=localStorage.getItem('answer6')+'1';
+		if(answer1==501){
+			ex1.checked=true;
+		}
+		else if (answer1==01){
+			ex2.checked=true;
+		}
+		}
+
+	 </script>	
+	</head>
+	<body>
+<h1>Did you make your room dark, quiet and comfortable before bed?</h1>
+<li align="center">
+<input type="radio" name="Yes" id="Yes" value="Yes"onclick ="handler('No','answer6','50','-6','0')"/>
+  <label for="Yes">Yes</label>
+</li>
+<li align="center">  
+  <input type="radio" name="No" id="No" value="No"onclick ="handler('Yes','answer6','0','-6','1')" />
+  <label for="No">No</label>
+ </li>
+ <div id="warning2"></div>
+<img src="PieImages/pie6new.png" name="MyImage"id="pie"/>
+<button id="next"onclick="linker('answer6','Question7.html','7')">next</button>
+<button id="menu"onclick="linkBack('Menu.html','6')">menu</button>
+<button id="back"onclick="linkBack('Question5.html','5')">back</button>
+	</body>
+</html>

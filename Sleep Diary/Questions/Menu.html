@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+	
+	<script type="text/javascript">
+	window.onload=function(){
+	    	var startDay=localStorage.getItem('startDay')+'1';
+	     	//This if-loop acts if it is the first time the app has ever been used
+	     	if(startDay=='null1'){
+	     	
+	     	/*TipCount increases by one every time a new set of tips is formed from the previous 
+	     	two weeks of data.  Here it is initialised to 0.*/
+	     		localStorage.setItem('tipCount','0');
+	     	
+	     		var today = new Date();
+	    		var startDayNew=Math.floor(today.getTime()/(24*60*60*1000));
+	    	/*startDayNew is the number of whole days since the January 1st 1970.
+	    	 * This will serve as a benchmark for later functions that involve the date
+	    	 */
+	    		localStorage.setItem('startDay', startDayNew);}
+	    	
+	    	var todaysDay= new Date();
+	    	var todaysDayNo=Math.floor(todaysDay.getTime()/(24*60*60*1000));
+	    	var startDayRef=localStorage.getItem('startDay');
+	    	//The number of days since the app was first used is measured and stored:
+	    	var todaysCount=todaysDayNo-startDayRef+1;
+	    	localStorage.setItem('todaysCount',todaysCount);
+	    	
+	    	/*Each time the menu is opened, a new datestamp is made.
+	    	 * This datestamp is used to calculated "TimeGap", which helps
+	    	 * to provide a useful title for the questionnaire button later:
+	    	 */
+			lastDay=localStorage.getItem('lastDay')+'1';
+	    	var dateStamp= new Date();
+	    	var dateStampNo=Math.floor(dateStamp.getTime()/(24*60*60*1000));
+	    	
+	    	
+	    	if(lastDay=='null1'){
+	    	//This if loop only acts the first time the app is ever used
+	    		localStorage.setItem('lastDay',dateStampNo);
+	    		document.getElementById("QButton").value="Complete\n Questionnaire!";
+	    		}
+	    	else {
+	    		var lastDay2=localStorage.getItem('lastDay');
+	    		var timeGap=dateStampNo-lastDay2;
+	    		localStorage.setItem('TimeGap',timeGap);
+	    		if(timeGap>0){
+	    			
+	    			/*If it is a different calendar day to when the app was last used,
+	    			the questionnaire buttons reads 'Complete Questionnaire!'*/
+	    			document.getElementById("QButton").value="Complete\n Questionnaire!";
+	    			var todaysCount2=localStorage.getItem('todaysCount');
+	    			localStorage.setItem('DoneStamp','null1');
+	    				for(var j=1;j<13;j++){
+	    					
+	    					//All of the scores from the previous day are erased
+	    					localStorage.setItem('answer'+j,'null1');}
+	    			}
+	    					
+	    		else if(timeGap=='0'&&localStorage.getItem('DoneStamp')=='done'){
+	    			//DoneStamp is set to 'done when the full questionnaire is submitted
+	    				document.getElementById("QButton").value="Questionnaire\n Completed!";}
+	    		else{
+	    				document.getElementById("QButton").value="Finish\n Questionnaire!";
+	    			}
+	    localStorage.setItem('lastDay',dateStampNo);
+	    	}
+	   
+	   /*The next section displays the graphs and tips button, which only begins to appear after
+	   the first four weeks of usage.*/
+	    	if(todaysCount<28){
+	    		document.getElementById("graphstips").style.display="none";
+	    	}else{document.getElementById("graphstips").style.display="block";}
+			
+			if(todaysCount>27){
+				if(Math.floor((todaysCount-14)/14)!=localStorage.getItem('tipCount')){
+			
+			//On the 28th day, and every 14 days from then on, new tips are calculated for the user:
+				tipsCalculator();
+			}}
+			
+			
+		};
+		
+		function Return(){
+		
+		/*The function 'Return' is used to return the user to the correct question they 
+		were previously on, if they had to temporarily leave the questionnaire.  They will 
+		always have to return to the app THROUGH the menu screen.*/
+			var timeGap=localStorage.getItem('TimeGap');
+			if(timeGap>0){
+				/*'linkBack is the function that takes the user to a page, and sets the 'finish' in localStorage
+				to, in the case below, 'null1'.  'finish' is explained more later*/ 
+	    				document.getElementById("QButton").onclick=linkBack('QuestionOne.html','null1');}
+	    			else if(timeGap=='0'&&localStorage.getItem('DoneStamp')=='done'){
+	    				document.getElementById("QButton").onclick=linkBack('Menu.html','null1');}
+	    			else{
+	    				/*Each time a new question is opened, the value of 'finish' is changed
+	    				 * to that question, so if the user suddenly leaves the app, the app remembers
+	    				 * which question they were on
+	    				 */	    				
+	    				var returnKey=localStorage.getItem('finish');
+	    				switch(returnKey){
+	    					case"null1":returnKey2="QuestionOne.html";
+	    					break;
+	    					case"2":returnKey2="QuestionTwo.html";
+	    					break;
+	    					case"3":returnKey2="QuestionThree.html";
+	    					break;
+	    					case"4":returnKey2="Question4.html";
+	    					break;
+	    					case"5":returnKey2="Question5.html";
+	    					break;
+	    					case"6":returnKey2="Question6.html";
+	    					break;
+	    					case"7":returnKey2="Question7.html";
+	    					break;
+	    					case"8":returnKey2="Question8.html";
+	    					break;
+	    					case"9":returnKey2="Question9.html";
+	    					break;
+	    					case"10":returnKey2="Question10.html";
+	    					break;
+	    					case"11":returnKey2="Question11.html";
+	    					break;
+	    					case"12":returnKey2="QuestionFinal.html";
+	    					break;
+	    					
+	    					    				
+	    				}
+	    				document.getElementById("QButton").onclick=linkBack(returnKey2,returnKey);
+	    			}
+		}
+	</script>
+	<script type="text/javascript" src="linker.js"></script>
+	<link href="StyleSheet2.css" type="text/css"rel="stylesheet"/>
+	</head>
+	<body>
+		
+<img class="displayed" src="DogNew2.png" name="MyImage"height="65" width="65" border="5px solid #000000" style="margin-top:3px;">
+<input type="button" value="Q" id="QButton"  style="position: absolute; 
+left: 3px;
+bottom: 55%;
+background-color: #FFFFFF;
+white-space:normal;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border: 5px solid #000000;
+  width: 95px;
+  height: 60px;
+  padding: 5px;
+  font-family:Arial Rounded MT Bold;
+  font-size:8pt;
+  "onclick="Return();"/>
+  
+  <button style="position: absolute; right: 3px;
+  bottom: 55%;
+  background-color: #FFFFFF;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border: 5px solid #000000;
+  width: 95px;
+  height: 60px;
+  padding: 5px;
+  font-family:Arial Rounded MT Bold;
+  font-size:8pt;">Settings</button>
+  
+  <button style="position: absolute; 
+  left: 3px;
+  bottom: 25%;
+  background-color: #FFFFFF;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border: 5px solid #000000;
+  width: 95px;
+  height: 60px;
+  padding: 5px;
+  font-family:Arial Rounded MT Bold;
+  font-size:8pt;">MP3 Player</button>
+  
+  <button id="graphstips"; onclick="linkBack('Tips.html','null1')" 
+  style="position: absolute;
+   right: 3px;
+   bottom: 25%;
+   background-color: #FFFFFF;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border: 5px solid #000000;
+  width: 95px;
+  height: 60px;
+  padding: 5px;font-family:Arial Rounded MT Bold;font-size:8pt;">Graphs and Tips</button>
+  
+	</body>
+</html>
+

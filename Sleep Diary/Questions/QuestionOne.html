@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<link href="StyleSheet.css" type="text/css"rel="stylesheet"/>
+		<script type="text/javascript" src="linker.js"></script>
+		<script type="text/javascript">
+			window.onload = function(){
+	    	reSetter();
+	 };
+		
+		function reSetter(){
+		/*ReSetter is for when the user returns to the question they've already answered.
+		*It reads the answer back from localStorage and checks the appropriate radiobutton*/
+		var ex1 = document.getElementById('Yes');
+	    var ex2 = document.getElementById('No');
+		var answer1=localStorage.getItem('answer1')+'1';
+		
+		if(answer1==01){
+			ex1.checked=true;
+		}
+		else if (answer1==501){
+			ex2.checked=true;
+		}
+		}   
+	    	
+	 </script>	
+	</head>
+	<body>
+<h1>Did you drink coffee yesterday evening?</h1>
+<li align="center">
+<input type="radio" id="Yes" value="Yes"
+onclick ="handler('No','answer1','0','-1','1')"/>
+  <label for="Yes">Yes</label>
+</li>
+<li align="center">  
+  <input type="radio" id="No" value="No"
+  onclick ="handler('Yes','answer1','50','-1','0')" />
+  <label for="No">No</label>
+ </li>
+ <div id="warning2"></div>
+<button id="next" onclick="linker('answer1','QuestionTwo.html','2')">next</button>
+<button id="menu" onclick="linkBack('Menu.html','null1')">menu</button>
+<img  src="PieImages/pie12new.png" id="pie" name="MyImage"/>
+	</body>
+</html>
+

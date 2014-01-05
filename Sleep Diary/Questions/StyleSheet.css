@@ -1,0 +1,87 @@
+h1 {
+	font-size:9pt;
+	background-color:#00FFFF;
+	text-align:center;
+	font-family:"Arial Rounded MT Bold";
+}
+
+body {
+	font-size:8pt;
+	text-align:center;
+	background-color:#00FFFF;
+	font-family:"Arial Rounded MT Bold";
+}
+
+#next{
+	position: absolute; 
+	left: 80%;
+	bottom: 3%; 
+	height: 36px;
+	width: 36px;
+	border-radius: 36px;
+	border: 1px solid #000;
+	font-family:"Arial Rounded MT Bold";
+	font-size:6pt;
+}
+#back{
+	position: absolute; 
+	right: 80%;
+	bottom: 3%; 
+	height: 36px;
+	width: 36px;
+	border-radius: 36px;
+	border: 1px solid #000;
+	font-family:"Arial Rounded MT Bold";
+	font-size:6pt;
+	
+}
+#menu{
+	position: absolute; 
+	right: 55%;
+	bottom: 3%;  
+	height: 36px;
+	width: 36px;
+	border-radius: 36px;
+	border: 1px solid #000;
+	font-family:"Arial Rounded MT Bold";
+	font-size: 6pt;
+}
+
+#pie{
+	position: absolute; 
+	height:36px;
+	width:36px; 
+	position:absolute; 
+	left:55%;
+	bottom:3%; 
+}
+
+input[type=radio] {
+  padding-bottom:6px;
+  padding-top:6px;
+}
+
+#ans5{
+padding-bottom:2px;
+  padding-top:2px;
+}
+
+#ans6{
+	padding-bottom:2px;
+  padding-top:2px;
+}
+
+#ans7{
+	padding-bottom:2px;
+  padding-top:2px;	
+}
+
+#ans8{
+	padding-bottom:2px;
+  padding-top:2px;	
+}
+
+#ans9{
+	padding-bottom:2px;
+  padding-top:2px;
+}
