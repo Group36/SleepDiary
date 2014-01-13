@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--http://forums.techguy.org/software-development/496375-matrices-javascript.html-->
+
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>JS Matrices</title>
+        <script type="text/javascript">
+        //<![CDATA[
+            function Matrix() {
+                this.rows = new Array();
+                this.tableAsString = function() {
+                    var temp = "";
+                    for ( var i = 0; i < this.rows.length; ++i ) {
+                        temp += this.rows[i];
+                        if ( i < this.rows.length - 1 ) {
+                            temp += "\n";
+                        }
+                    }
+                    return temp;
+                };
+                this.width = function() {
+                    return this.rows[0].length;
+                };
+                this.height = function() {
+                    return this.rows.length;
+                };
+                this.asTableElement = function(w,h,t,p,s,b,a) {
+                    var table = document.createElement("table");
+                    table.style.width = w;
+                    table.style.height = h;
+                    table.style.textAlign = a;
+                    var caption = document.createElement("caption");
+                    caption.appendChild( document.createTextNode(t) );
+                    table.appendChild( caption );
+                    table.setAttribute("cellspacing", s );
+                    table.setAttribute("cellpadding", p);
+                    table.setAttribute("border", b );
+                    for ( var i = 0; i < this.rows.length; ++i ) {
+                        var tr = document.createElement("tr");
+                        for ( var z = 0; z < this.rows[i].length; ++z ) {
+                            var td = document.createElement("td");
+                            td.appendChild( document.createTextNode( this.rows[i][z] ) );
+                            tr.appendChild( td );
+                        }
+                        table.appendChild( tr );
+                    }
+                    return table;
+                };
+            }
+            window.onload = function() {
+                var m = new Matrix();
+                m.rows[0] = new Array( 1, 2, 3 );
+                m.rows[1] = new Array( 4, 5, 6 );
+                m.rows[2] = new Array( 7, 8, 9 );
+                alert( m.tableAsString() );
+                //alert( m.width() + " x " + m.height() );
+                document.body.appendChild( m.asTableElement( "300px", "300px", "", 0, 0, 0, "center" ) );
+                // make IE update display
+                if ( navigator.userAgent.toLowerCase().indexOf("msie") != -1 && !window.opera ) {
+                    document.body.innerHTML = document.body.innerHTML;
+                }
+            };
+        //]]>
+        </script>
+    </head>
+    <body>
+    
+    </body>
+</html>

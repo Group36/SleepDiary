@@ -6,17 +6,17 @@
 		<link href="StyleSheet.css" type="text/css"rel="stylesheet"/>
 		<script type="text/javascript" src="linker.js"></script>
 		<script type="text/javascript">
-		window.onload=function(){
-		tipWriter();
-		};
-		
-			function tipWriter(){
-	document.getElementById("Tip1").innerHTML +=localStorage.getItem('tips1')+'<br>';
-	document.getElementById("Tip2").innerHTML +=localStorage.getItem('tips2')+'<br>';
-	document.getElementById("Tip3").innerHTML +=localStorage.getItem('tips3')+'<br>';
-	document.getElementById("Tip4").innerHTML +=localStorage.getItem('tips4')+'<br>';			
-		}
-	</script>
+			window.onload = function() {
+				tipWriter();
+			};
+
+			function tipWriter() {
+				document.getElementById("Tip1").innerHTML += localStorage.getItem('tips1') + '<br>';
+				document.getElementById("Tip2").innerHTML += localStorage.getItem('tips2') + '<br>';
+				document.getElementById("Tip3").innerHTML += localStorage.getItem('tips3') + '<br>';
+				//document.getElementById("Tip4").innerHTML += localStorage.getItem('tips4') + '<br>';
+			}
+		</script>
 	</head>
 	<body>
 		<div id="Tip1" style="font-size:12pt;padding-bottom:3px;"></div>
@@ -24,16 +24,31 @@
 		<div id="Tip3"style="font-size:12pt;padding-bottom:3px;"></div>
 		<div id="Tip4"style="font-size:12pt;padding-bottom:3px;"></div>
 
-<button style="position: absolute;
- right:50%;
- bottom: 2px;
-  margin-right: -18px;
-  height: 36px;
-  width: 36px;
-  border-radius: 36px;
-  border: 1px solid #000;
-  font-size: 6pt;
-  font-family:Arial Rounded MT Bold;"onclick="linkBack('Menu.html','null1')">menu</button>
+		<button style="position: absolute;
+		right:20%;
+		bottom: 2px;
+		margin-right: -18px;
+		height: 36px;
+		width: 36px;
+		border-radius: 36px;
+		border: 1px solid #000;
+		font-size: 6pt;
+		font-family:Arial Rounded MT Bold;"onclick="linkBack('Menu.html','null1')">
+			menu
+		</button>
+
+		<button style="position: absolute;
+		right:50%;
+		bottom: 2px;
+		margin-right: -18px;
+		height: 36px;
+		width: 36px;
+		border-radius: 36px;
+		border: 1px solid #000;
+		font-size: 6pt;
+		font-family:Arial Rounded MT Bold;"onclick="linkBack('Graph1.html','null1')">
+			graphs
+		</button>
 	</body>
 </html>
 

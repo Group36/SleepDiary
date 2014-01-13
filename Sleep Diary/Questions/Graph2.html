@@ -1,0 +1,97 @@
+<!DOCTYPE html>  <!--html doctype stands for HTML5-->
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<title>How Refereshed You Have Felt Each Morning</title> 
+	<!--**<link href="basic.css" type="text/css" rel="stylesheet" />-->
+	<link href="visualize.css" type="text/css" rel="stylesheet" />
+	<link href="visualize-light.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="linker.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script type="text/javascript" src="visualize.jQuery.js"></script>   
+	<style>table.invisible {display:none;}</style> <!--style resource used to hide table-->  
+
+<!--//JS FUNCTION TO CREATE GRAPH OUT OF TABLE PRESENTED BELOW (the table is then just not displayed)-->
+	<script type="text/javascript">
+	$(function(){
+		$('table').visualize({
+			type: 'bar', //can be 'area'', 'pie', 'bar' or 'line'
+			title: 'How Refereshed You Have Felt Each Morning'});
+	});
+	</script>
+
+	<noscript> <!--Error Warning if a browser without JavaScript enabled is used-->
+		Sorry, your browser does not support JavaScript. 
+	</noscript>
+</head>
+
+<!--MAKE DATA MATRIX OUT OF LOCAL STORAGE DATA-->
+<body>
+	<script type="text/javascript">
+		if(typeof(Storage)!=="undefined")
+		{
+			var beginDay=localStorage.startDay; 						//first day that the questionnaire is answered
+			var currentDay=localStorage.lastDay;						//day this code is processed, i.e. day graph is created
+			var numberOfDataPoints=(currentDay-beginDay+1);				//how many points to iterate through
+			//var numberOfDataPoints=8;									//data matrix, [1][2] gives answer to question 1 on day 2
+			var data = new Array(12);									//array to become a matrix
+			for (var i=1; i<=12; i++){									//first array in matrix: data[0][:] isn't used, left empty
+				data[i]=new Array(numberOfDataPoints);					//make each array element an array to hold answers to each question
+			}
+			for (var i=1; i<=12; i++){ 									//i = question number
+				for (var j=1; j<=numberOfDataPoints; j++){     			//j = day of answer
+					if ((localStorage.getItem(i+"-"+j)+1)!='null1'){  	//for days the question is answered
+						data[i][j]=localStorage.getItem(i+"-"+j);
+					}
+					else { 												//for days when the patient skips answering the questionnaire
+						data[i][j]='E'; 								// graphing reads anything but a number as null
+					}
+				}
+			}       
+		}
+		else //ERROR MESSAGE for when HTML5 localStorage isn't enabled (web browser is too old)
+		{
+			System.out.println("Your browser does not support localStorage in HTML5. Please update your web browser");
+		}
+	
+	</script>
+</body>
+
+<!--CREATE SLEEP QUALITY TABLE TO BE PLOTTED BY JS FUNCTION-->
+<body>
+<table class="invisible"> <!--use CSS class="invisible" to hide the table as it is only used to create the graph-->
+		<script type="text/javascript">
+				document.write("<thead>");
+				document.write("<tr>");
+				for (var j=1; j<=numberOfDataPoints; j++){
+					if (j!=24){
+						document.write("<th>"+' '+"</th>"); //swap ' ' for x labels if wanted
+					}
+					if (j==24){
+						document.write("<th>"+'Day'+"</th>");
+					}
+				}
+				document.write("</tr>");
+				document.write("</thead>");
+				document.write("<tbody>");
+				document.write("<tr>");
+				for (var j=1; j<=numberOfDataPoints; j++){
+					document.write("<td>"+data[10][j]+"</td>"); //change [10] according to question # being plotted
+				}
+				document.write("</tr>");
+				document.write("</tbody>");
+		</script>	
+</table>
+
+<button id="menu"onclick="linkBack('Menu.html','10')">
+	menu
+</button>
+<button id="next"onclick="linkBack('Graph3.html','10')">
+	next
+</button>
+<button id="back"onclick="linkBack('Graph1.html','10')">
+	back
+</button>
+<img src="PieImages/pie8new.png" name="MyImage"id="pie"/>
+</body>
+</html>

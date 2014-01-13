@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<title>localStorageToMatrix</title> 
+<head>
+	<script type="text/javascript">
+	{
+		if(typeof(Storage)!=="undefined")
+		{
+			var beginDay=localStorage.startDay; 						//first day that the questionnaire is answered
+			var currentDay=new Date();									//day this code is processed, i.e. day graph is created
+			var currentDay=Math.floor(currentDay.getTime()/24*60*60*1000);
+			var numberOfDataPoints=(currentDay-beginDay+1);				//how many points to iterate through
+			var numberOfDataPoints=8;									//data matrix, [1][2] gives answer to question 1 on day 2
+			var data = new Array(12);									//array to become a matrix
+			for (var i=0; i<12; i++){
+				data[i]=new Array(numberOfDataPoints);					//make each array element an array to hold answers to each question
+			}
+			for (var i=1; i<=2; i++){ 									//i = question number
+				for (var j=1; j<=numberOfDataPoints; j++){     			//j = day of answer
+					if ((localStorage.getItem(i+"-"+j)+1)!='null1'){  	//for days the question is answered
+						data[i][j]=localStorage.getItem(i+"-"+j);
+					}
+					else { 												//for days when the patient skips answering the questionnaire
+						data[i][j]='E'; 				// graphing reads anything but a number as null
+					}
+				}
+			}         
+		}
+		else //ERROR MESSAGE for when HTML5 localStorage isn't enabled (web browser is too old)
+		{
+			System.out.println("Your browser does not support localStorage in HTML5.");
+		}
+	}
+	</script>
+</head>
